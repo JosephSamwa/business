@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .dashboard, .services {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .dashboard h4, .dashboard p {
+            color: #555;
+        }
+
+        .services button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .services button:hover {
+            background-color: #0056b3;
+        }
+
+        #services {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #services h3 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is the dashboard</h1>
+
+    <div class="dashboard">
+        <h4>In this page the user will see all his details, including the lessons he is enrolled in.</h4>
+        <p>Any payment he has made will also be displayed here.</p>
+    </div>
+
+    <div class="services">
+        <button id="Bt">Click here to view our services</button>
+    </div>
+
+    <section id="services">
+        <h3>All our services will be listed here</h3>
+    </section>
+    <script>
+        const BT = document.getElementById('Bt');
+        const services = document.getElementById('services');
+
+        BT.addEventListener('click', () => {
+            services.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

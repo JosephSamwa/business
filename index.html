@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Home- page</title>
+</head>
+<body>
+    <h1>HOME</h1>
+    <div>
+       <h4>This is the home page.</h4>  
+       <p>In this page we introduce our business/ tell the users about us.</p>
+       <p>Then we provide a secion for either registering or login</p>
+
+       <em>the buttons are functional ...</em>
+    </div>
+
+    <div>
+        <button id="loginBt">Login</button>||
+        <button id="registerBt">Register</button>
+    </div>
+
+    <section class="register" style="display: none;" id="register">
+        <form action="" id="Rform">
+            <fieldset>
+                <legend>Registration Details</legend>
+                <label for="name">User Name</label>
+                <input type="text" id="name"><br>
+                <label for="email">Email</label>
+                <input type="email" id="email"><br>
+                <label for="password">Password</label>
+                <input type="password" id="password">
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+    </section>
+
+    <section class="login" style="display: none;" id="login">
+        <form action="" id="Lform">
+            <fieldset>
+                <label for="name">User Name</label>
+                <input type="text" id="name"><br>
+                <label for="password">Password</label>
+                <input type="password" id="password">
+                <button type="submit">Log In</button>
+            </fieldset>
+        </form>
+    </section>
+
+    <div class="services">
+        <button id="Bt">Click here to view our services</button>
+    </div>
+
+    <section id="services" style="display: none;">
+        <h3>All our services will be listed here</h3>
+    </section>
+    <script>
+        const login = document.getElementById('loginBt');
+        const register = document.getElementById('registerBt');
+        const Login = document.getElementById('login');
+        const Register = document.getElementById('register');
+        const Lform = document.getElementById('Lform');
+        const Rform = document.getElementById('Rform');
+        const BT = document.getElementById('Bt');
+        const services = document.getElementById('services');
+
+        login.addEventListener('click', ()=>{
+            Login.style.display='block';
+            Register.style.display='none';
+            services.style.display='none';
+        });
+
+
+        register.addEventListener('click', ()=>{
+            Register.style.display='block';
+            Login.style.display='none';
+            services.style.display='none';
+        });
+
+        Lform.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            location.href='dashboard.html';
+
+        });
+
+        Rform.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            location.href='dashboard.html';
+
+
+        });
+
+        BT.addEventListener('click', ()=>{
+            services.style.display='block';
+
+        });
+    </script>
+</body>
+</html>
